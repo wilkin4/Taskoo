@@ -5,30 +5,58 @@
 
 <div class="container-fluid">
     <div id="tasks-container" class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-12">
-        <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <div class="task">
-                <div class="task-priority">
-                    <img src="~/Assets/Icons/green-triangle.png" class="img-responsive" />
-                </div>
+        
+        @{
+            foreach (var task in ViewBag.Tasks)
+            {
+                <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="task">
+                        <div class="task-priority">    
+                            @{ 
+                                string iconName = "";
+                                char value = Convert.ToChar(task.priority);
 
-                <div class="task-title">
-                    Et harum quidem
-                </div>
+                                switch (value)
+                                {
+                                    case 'r':
+                                        iconName = "red-triangle";
+                                        break;
+                                    case 'y':
+                                        iconName = "yellow-triangle";
+                                        break;
+                                    case 'g':
+                                        iconName = "green-triangle";
+                                        break;
+                                }
 
-                <div class="task-date-time">
-                    08 : 30 PM <br />
-                    Monday, June 30th
-                </div>
+                            }    
+                                             
+                            <img src="~/Assets/Icons/@(iconName).png" class="img-responsive" />
+                        </div>
 
-                <div class="task-description">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum eos et accusamus et iusto odio...
-                </div>
+                        <div class="task-title">
+                            @task.title
+                        </div>
 
-                <div class="task-controls">
-                    <img class="task-check img-responsive" src="~/Assets/icons/check1.png" />
-                    <img class="task-close img-responsive" src="~/Assets/icons/close.png"/>
+                        <div class="task-date-time">  
+                            @String.Format("{0:T}", task.finalDate)
+                            <br />
+
+                            @String.Format("{0:dddd, MMMM d}", task.finalDate)
+                        </div>
+
+                        <div class="task-description">                            
+                            @task.description
+                        </div>
+
+                        <div class="task-controls">
+                            <img class="task-check img-responsive" src="~/Assets/icons/check1.png" />
+                            <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            }
+        }
+
     </div>
 </div>
