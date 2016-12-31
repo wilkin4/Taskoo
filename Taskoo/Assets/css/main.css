@@ -1,0 +1,73 @@
+﻿
+#tasks-container
+{
+    padding: 0;
+}
+
+.task-container
+{
+   padding: 0 15px 0 15px;
+}
+
+.task
+{
+    position: relative;
+    height: 350px;
+    padding: 15px;
+    border: 1px solid #bbbbbb;
+}
+
+.task-priority img
+{
+    margin: auto;
+    height: 30px;
+}
+
+.task-title
+{
+    font-size: 16pt;
+    text-align: center;
+}
+
+.task-date-time
+{
+    font-size: 14pt;
+    text-align: center;
+    color: #4da9ce;
+}
+
+.task-description
+{
+    font-size: 12pt;
+}
+
+.task-priority,
+.task-title,
+.task-date-time,
+.task-description
+{
+    margin-bottom: 15px;
+}
+
+.task-controls
+{
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.task-controls img
+{
+    height: 20px;
+}
+
+.task-check
+{
+    float: left;
+}
+
+.task-close{
+    float: right;
+}
+
