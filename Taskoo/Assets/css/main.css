@@ -11,8 +11,6 @@
 
 .task
 {
-    position: relative;
-    height: 400px;
     padding: 15px;
     border: 1px solid #bbbbbb;
 }
@@ -27,6 +25,7 @@
 {
     font-size: 16pt;
     text-align: center;
+    height: 60px;
 }
 
 .task-date-time
@@ -40,6 +39,14 @@
 {
     text-align: center;
     font-size: 12pt;
+    height: 180px;
+    display: table;
+}
+
+.task-description span
+{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .task-priority,
@@ -52,10 +59,7 @@
 
 .task-controls
 {
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
+    margin-bottom: 32px;
 }
 
 .task-controls img

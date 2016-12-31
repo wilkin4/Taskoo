@@ -11,46 +11,28 @@
             {
                 <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="task">
-                        <div class="task-priority">    
-                            @{ 
-                                string iconName = "";
-                                char value = Convert.ToChar(task.priority);
-
-                                switch (value)
-                                {
-                                    case 'r':
-                                        iconName = "red-triangle";
-                                        break;
-                                    case 'y':
-                                        iconName = "yellow-triangle";
-                                        break;
-                                    case 'g':
-                                        iconName = "green-triangle";
-                                        break;
-                                }
-
-                            }    
-                                             
-                            <img src="~/Assets/Icons/@(iconName).png" class="img-responsive" />
+                        <div class="task-priority">                                               
+                            <img src="~/Assets/Icons/@(task.PriorityIconName).png" class="img-responsive" />
                         </div>
 
                         <div class="task-title">
-                            @task.title
+                            @task.Title
                         </div>
 
                         <div class="task-date-time">  
-                            @String.Format("{0:T}", task.finalDate)
+                            @task.Time
                             <br />
-
-                            @String.Format("{0:dddd, MMMM d}", task.finalDate)
+                            @task.Date
                         </div>
 
                         <div class="task-description">                            
-                            @task.description
+                            <span>
+                                @task.Description
+                            </span>
                         </div>
 
                         <div class="task-controls">
-                            <img class="task-check img-responsive" src="~/Assets/icons/check1.png" />
+                            <img class="task-check img-responsive" src="~/Assets/icons/@(task.IsFinishedIconName).png" />
                             <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
                         </div>
                     </div>
