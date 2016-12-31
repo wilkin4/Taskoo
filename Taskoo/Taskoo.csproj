@@ -149,23 +149,34 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Icons\check1.png" />
-    <Content Include="Assets\Icons\check2.png" />
-    <Content Include="Assets\Icons\close.png" />
-    <Content Include="Assets\Icons\green-triangle.png" />
-    <Content Include="Assets\Icons\red-triangle.png" />
-    <Content Include="Assets\Icons\yellow-triangle.png" />
-    <Content Include="Assets\Isologo\Isologo.png" />
+    <Content Include="Assets\css\general.css" />
+    <Content Include="Assets\css\main.css" />
+    <Content Include="Assets\icons\check1.png" />
+    <Content Include="Assets\icons\check2.png" />
+    <Content Include="Assets\icons\close.png" />
+    <Content Include="Assets\icons\green-triangle.png" />
+    <Content Include="Assets\icons\red-triangle.png" />
+    <Content Include="Assets\icons\yellow-triangle.png" />
+    <Content Include="Assets\isologo\Isologo.png" />
+    <Content Include="Assets\Mockups\Normal Views\All Tasks View.jpg" />
+    <Content Include="Assets\Mockups\Normal Views\Create and Edit View.jpg" />
+    <Content Include="Assets\Mockups\Normal Views\Main View.jpg" />
+    <Content Include="Assets\Mockups\Pop-Up Views\Cancel View.jpg" />
+    <Content Include="Assets\Mockups\Pop-Up Views\Info View.jpg" />
+    <Content Include="Assets\Mockups\Pop-Up Views\Loading View.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -173,6 +184,24 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\fonts\raleway\Raleway-Black.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-BlackItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-Bold.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-BoldItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-ExtraBold.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-ExtraLight.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-Italic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-Light.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-LightItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-Medium.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-MediumItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-Regular.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-SemiBold.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-Thin.ttf" />
+    <Content Include="Assets\fonts\raleway\Raleway-ThinItalic.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -199,6 +228,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Shared\GeneralLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
