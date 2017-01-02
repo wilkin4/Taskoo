@@ -4,6 +4,34 @@
     padding: 0;
 }
 
+#task-filter
+{
+    clear: both;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#task-filter a
+{
+    text-decoration: none;
+}
+
+.task-transparent-icon
+{
+    opacity: .3;
+}
+
+.task-highlighted-icon
+{
+    opacity: 1;
+}
+
+#task-filter img
+{
+    height: 30px;
+    margin: 0 10px 0 10px;
+}
+
 .task-container
 {
    padding: 0 15px 0 15px;
@@ -11,10 +39,9 @@
 
 .task
 {
-    position: relative;
-    height: 350px;
     padding: 15px;
     border: 1px solid #bbbbbb;
+    margin-bottom: 30px;
 }
 
 .task-priority img
@@ -27,6 +54,7 @@
 {
     font-size: 16pt;
     text-align: center;
+    height: 60px;
 }
 
 .task-date-time
@@ -38,7 +66,16 @@
 
 .task-description
 {
+    text-align: center;
     font-size: 12pt;
+    height: 180px;
+    display: table;
+}
+
+.task-description span
+{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .task-priority,
@@ -51,10 +88,7 @@
 
 .task-controls
 {
-    position: absolute;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
+    margin-bottom: 32px;
 }
 
 .task-controls img
@@ -69,5 +103,43 @@
 
 .task-close{
     float: right;
+}
+
+#task-menu
+{
+    margin-bottom: 35px;
+}
+
+.task-button-container
+{
+    padding: 0 10px 0 10px;
+}
+
+.task-button-container a
+{
+    text-decoration: none;
+    color: #bbbbbb;
+}
+
+#task-view-more-button,
+#task-new-button
+{
+    border: 1px solid #bbbbbb;
+    height: 50px;
+    font-size: 14pt;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#task-view-more-button:hover
+{
+    border: 1px solid #4da9ce;
+     color: #4da9ce;
+}
+
+#task-new-button:hover
+{
+    border: 1px solid #4da9ce;
+     color: #4da9ce;
 }
 

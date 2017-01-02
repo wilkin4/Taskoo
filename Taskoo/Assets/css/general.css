@@ -10,3 +10,92 @@ body
     font-family: "font1";
     color: #aaaaaa;
 }
+
+#task-corner-design-top-container
+{
+    position: absolute;
+    transform: rotate(-45deg);
+    left: -36px;
+    top: -63px;
+}
+
+#task-corner-design-top-container .task-corner-design-top:first-child
+{
+    margin-left: 55px;
+}
+
+.task-corner-design-top
+{
+    height: 40px;
+    width: 150px;
+    margin: 15px 0 15px 0;
+    background-color: #B2E1F3;
+}
+
+footer
+{
+    clear: both;
+    overflow: hidden;
+    height: 99px;
+}
+
+#task-copyright
+{
+    font-size: 14pt;
+    height: 99px;
+    display: table;
+    float: left;
+    padding-left: 20px;
+}
+
+#task-copyright span
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#task-corner-design-bottom-container
+{
+    margin: 33px -7px 0 0;
+    float: right;
+}
+
+#task-corner-design-bottom-container .task-corner-design-bottom:first-child
+{
+    margin-left: 55px;
+}
+
+.task-corner-design-bottom
+{
+    height: 40px;
+    width: 150px;
+    margin: 15px 0 15px 0;
+    background-color: #D4D4D4;
+    float: right;
+    transform: rotate(135deg);
+    clear: both;
+}
+
+#task-isologo
+{
+    margin-top: 50px;
+    text-align: center;
+}
+
+#task-isologo img
+{
+    height: 30px;
+}
+
+#task-info
+{
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 2px;
+    border: 2px solid #cccccc;
+    color: #cccccc;
+    float: right;
+}

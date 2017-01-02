@@ -11,16 +11,46 @@
     </head>
 
     <body>
-        <header>
+        <div id="task-corner-design-top-container">
+            <div class="task-corner-design-top">
 
+            </div>
+
+            <div class="task-corner-design-top">
+
+            </div>
+        </div>
+
+        <header class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
+            <div id="task-isologo">
+                <img src="~/Assets/isologo/isologo.png"/>
+            </div>
+
+            <div id="task-info">
+                i
+            </div>
         </header>
 
         <section>
-            @RenderBody()
+            @RenderBody() 
         </section>
 
         <footer>
+            <div id="task-copyright">
+                <span>
+                    &#169; Taskoo @DateTime.Now.Year
+                </span>
+            </div>
 
+            <div id="task-corner-design-bottom-container">
+                <div class="task-corner-design-bottom">
+
+                </div>
+
+                <div class="task-corner-design-bottom">
+
+                </div>
+            </div>
         </footer>
     </body>
 </html>

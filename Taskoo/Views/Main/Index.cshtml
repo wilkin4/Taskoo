@@ -3,32 +3,74 @@
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
 }
 
-<div class="container-fluid">
-    <div id="tasks-container" class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-12">
-        <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <div class="task">
-                <div class="task-priority">
-                    <img src="~/Assets/Icons/green-triangle.png" class="img-responsive" />
-                </div>
+<div>
+    <div id="task-filter">
+        <a href="@Url.Action("Index", "Main", new {priority = "g"})">
+            <img src="~/Assets/icons/green-triangle.png" class="@ViewBag.GreenTransparenceIcon task-transparent-icon" />
+        </a>
+        
+        <a href="@Url.Action("Index", "Main", new {priority = "y"})">
+            <img src="~/Assets/icons/yellow-triangle.png" class="@ViewBag.YellowTransparenceIcon task-transparent-icon" />
+        </a>
 
-                <div class="task-title">
-                    Et harum quidem
-                </div>
-
-                <div class="task-date-time">
-                    08 : 30 PM <br />
-                    Monday, June 30th
-                </div>
-
-                <div class="task-description">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum eos et accusamus et iusto odio...
-                </div>
-
-                <div class="task-controls">
-                    <img class="task-check img-responsive" src="~/Assets/icons/check1.png" />
-                    <img class="task-close img-responsive" src="~/Assets/icons/close.png"/>
-                </div>
-            </div>
-        </div>
+        <a href="@Url.Action("Index", "Main", new {priority = "r"})">
+            <img src="~/Assets/icons/red-triangle.png" class="@ViewBag.RedTransparenceIcon task-transparent-icon" />
+        </a>
     </div>
+
+    <div id="tasks-container" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+        
+        @{
+            foreach (var task in ViewBag.Tasks)
+            {
+                <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="task">
+                        <div class="task-priority">                                               
+                            <img src="~/Assets/Icons/@(task.PriorityIconName).png" class="img-responsive" />
+                        </div>
+
+                        <div class="task-title">
+                            @task.Title
+                        </div>
+
+                        <div class="task-date-time">  
+                            @task.Time
+                            <br />
+                            @task.Date
+                        </div>
+
+                        <div class="task-description">                            
+                            <span>
+                                @task.Description
+                            </span>
+                        </div>
+
+                        <div class="task-controls">
+                            <img class="task-check @task.IsFinishedIconName task-transparent-icon img-responsive" src="~/Assets/icons/check.png" />
+                            <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+
+    <nav id="task-menu" class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
+        <div class="task-button-container col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <a href="@Url.Action("Index", "AllTasks", new { priority = "a"})">
+                <div id="task-view-more-button">
+                    View more
+                </div>
+            </a>
+        </div>
+
+        <div class="task-button-container col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <a href="@Url.Action("Index", "NewTask")">
+                <div id="task-view-more-button">
+                    New
+                </div>
+            </a>
+        </div>
+    </nav>
 </div>
