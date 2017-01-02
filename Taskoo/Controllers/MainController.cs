@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -8,38 +9,55 @@ namespace Taskoo.Controllers
 {
     public class MainController : Controller
     {
+        private string _highlightClassName = "task-highlighted-icon";
+
         // GET: Main
-        public ActionResult Index(char? id)
+        public ActionResult Index(char? priority)
         {
             TaskDataContext db = new TaskDataContext();
 
-            var query = from c in db.Tasks
-                        select c;
+            var query = getTasks(db, 'g');
 
-            switch (id)
-            {
-                case 'r':
-                    query = from c in db.Tasks
-                            where c.priority == 'r'
-                            select c;
-                    break;
+            switch (priority)
+            {               
                 case 'g':
-                    query = from c in db.Tasks
-                            where c.priority == 'g'
-                            select c;
+                    query = getTasks(db, 'g');
+
+                    ViewBag.GreenTransparenceIcon = _highlightClassName;
+
                     break;
                 case 'y':
-                    query = from c in db.Tasks
-                            where c.priority == 'y'
-                            select c;
+                    query = getTasks(db, 'y');
+
+                    ViewBag.YellowTransparenceIcon = _highlightClassName;
+
                     break;
+                case 'r':
+                    query = getTasks(db, 'r');
+
+                    ViewBag.RedTransparenceIcon = _highlightClassName;
+
+                    break;
+                default:
+                    ViewBag.GreenTransparenceIcon = _highlightClassName;
+                    break;
+
             }
 
-            List<Task> tasks = query.ToList();
+            List<Task> tasks = query.Take(3).ToList();
 
             ViewBag.Tasks = ProcessTasks(tasks);
 
             return View();
+        }
+
+        // No test for this method yet.
+        private IEnumerable<Task> getTasks(TaskDataContext db, char priority)
+        {
+            return from c in db.Tasks
+                   where c.priority == priority
+                   orderby c.finalDate ascending
+                   select c;
         }
 
         // No test for this method yet.
@@ -87,7 +105,7 @@ namespace Taskoo.Controllers
 
         public string findIsFinishedIconName(bool isDone)
         {
-            return isDone ? "check2" : "check1";
+            return isDone ? this._highlightClassName : "";
         }
     }
 }

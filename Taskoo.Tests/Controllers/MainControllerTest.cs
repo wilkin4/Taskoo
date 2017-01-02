@@ -38,12 +38,12 @@ namespace Taskoo.Tests.Controllers
             MainController controller2 = new MainController();
 
             // Act
-            string result1 = controller1.findIsFinishedIconName(false);
-            string result2 = controller2.findIsFinishedIconName(true);
+            string result1 = controller1.findIsFinishedIconName(true);
+            string result2 = controller2.findIsFinishedIconName(false);
 
             // Assert
-            Assert.AreEqual("check1", result1);
-            Assert.AreEqual("check2", result2);
+            Assert.AreEqual("task-highlighted-icon", result1);
+            Assert.AreEqual("", result2); 
         }
     }
 }

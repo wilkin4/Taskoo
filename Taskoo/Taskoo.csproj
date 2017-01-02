@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AllTasksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
@@ -165,13 +166,12 @@
   <ItemGroup>
     <Content Include="Assets\css\general.css" />
     <Content Include="Assets\css\main.css" />
-    <Content Include="Assets\icons\check1.png" />
-    <Content Include="Assets\icons\check2.png" />
+    <Content Include="Assets\icons\check.png" />
     <Content Include="Assets\icons\close.png" />
     <Content Include="Assets\icons\green-triangle.png" />
     <Content Include="Assets\icons\red-triangle.png" />
     <Content Include="Assets\icons\yellow-triangle.png" />
-    <Content Include="Assets\isologo\Isologo.png" />
+    <Content Include="Assets\isologo\isologo.png" />
     <Content Include="Assets\Mockups\Normal Views\All Tasks View.jpg" />
     <Content Include="Assets\Mockups\Normal Views\Create and Edit View.jpg" />
     <Content Include="Assets\Mockups\Normal Views\Main View.jpg" />
@@ -242,6 +242,7 @@
       <LastGenOutput>Task.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\AllTasks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
