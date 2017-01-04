@@ -4,16 +4,70 @@
     ViewBag.ViewName = "AllTasks";
 }
 
-<!DOCTYPE html>
+<div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-       
+    <nav id="task-menu" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+        <div class="task-button-container col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <a href="@Url.Action("Index", "Main")">
+                <div id="task-view-more-button">
+                    Home
+                </div>
+            </a>
+        </div>
+
+        <div class="task-button-container col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <a href="@Url.Action("Index", "AllTasks", new { priority = "a"})">
+                <div id="task-view-more-button">
+                    View all
+                </div>
+            </a>
+        </div>
+
+        <div class="task-button-container col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <a href="@Url.Action("Index", "NewTask")">
+                <div id="task-view-more-button">
+                    New
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <div id="tasks-container" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+
+        @{
+            foreach (var task in ViewBag.Tasks)
+            {
+                <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="task">
+                        <div class="task-priority">
+                            <img src="~/Assets/Icons/@{if (task.Priority == 'g') { @("green-triangle") } else { @(task.Priority == 'y' ? "yellow-triangle" : "red-triangle") } }.png" class="img-responsive" />
+                        </div>
+
+                        <div class="task-title">
+                            @task.Title
+                        </div>
+
+                        <div class="task-date-time">
+                            @task.Time
+                            <br />
+                            @task.Date
+                        </div>
+
+                        <div class="task-description">
+                            <span>
+                                @task.Description
+                            </span>
+                        </div>
+
+                        <div class="task-controls">
+                            <img class="task-check @(task.IsFinishedTask ? "task-highlighted-icon" : "") task-transparent-icon img-responsive" src="~/Assets/icons/check.png" />
+                            <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
+                        </div>
+                    </div>
+                </div>
+             }       
+        }
+
     </div>
-</body>
-</html>
+
+</div>

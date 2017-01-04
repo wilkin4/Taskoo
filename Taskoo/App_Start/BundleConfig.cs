@@ -30,7 +30,8 @@ namespace Taskoo
             // Taskoo style bundles
             bundles.Add(new StyleBundle("~/Assets/css").Include(
                       "~/Assets/css/general.css",
-                      "~/Assets/css/main.css"));
+                      "~/Assets/css/main.css",
+                      "~/Assets/css/common.css"));
         }
     }
 }

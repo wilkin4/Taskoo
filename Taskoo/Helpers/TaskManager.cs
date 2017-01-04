@@ -8,20 +8,20 @@ namespace Taskoo.Helpers
     public class TaskManager
     {
         // No test for this method yet.
-        public IEnumerable<Task> getTasksByPriority(TaskDataContext db, char? priority)
+        public List<Task> getAllNotFinishedTasksByPriority(TaskDataContext db, char? priority)
         {
-            var query = getTasks(db, 'g');
+            List<Task> query = getNotFinihedTasks(db, 'g');
 
             switch (priority)
             {
                 case 'g':
-                    query = getTasks(db, 'g');
+                    query = getNotFinihedTasks(db, 'g');
                     break;
                 case 'y':
-                    query = getTasks(db, 'y');
+                    query = getNotFinihedTasks(db, 'y');
                     break;
                 case 'r':
-                    query = getTasks(db, 'r');
+                    query = getNotFinihedTasks(db, 'r');
                     break;
             }
 
@@ -29,12 +29,45 @@ namespace Taskoo.Helpers
         }
 
         // No test for this method yet.
-        public IEnumerable<Task> getTasks(TaskDataContext db, char priority)
+        public List<Task> getNotFinihedTasks(TaskDataContext db, char priority)
         {
-            return from c in db.Tasks
-                   where c.priority == priority && c.isDone == false
-                   orderby c.finalDate ascending
-                   select c;
+            return (from c in db.Tasks
+                    where c.priority == priority && c.isDone == false
+                    orderby c.finalDate ascending
+                    select c).Take(3).ToList();
+        }
+
+        // No test for this method yet.
+        public List<Task> getAllTasksByPriority(TaskDataContext db, char? priority)
+        {
+            var query = getAllTasks(db, 'g');
+
+            switch (priority)
+            {
+                case 'g':
+                    query = getAllTasks(db, 'g');
+                    break;
+                case 'y':
+                    query = getAllTasks(db, 'y');
+                    break;
+                case 'r':
+                    query = getAllTasks(db, 'r');
+                    break;
+                case 'a':
+                    query = (from c in db.Tasks
+                             select c).ToList();
+                    break;
+            }
+
+            return query;
+        }
+
+        // No test for this method yet.
+        public List<Task> getAllTasks(TaskDataContext db, char priority)
+        {
+            return (from c in db.Tasks
+                    where c.priority == priority
+                    select c).ToList();
         }
 
         // No test for this method yet.

@@ -16,7 +16,7 @@ namespace Taskoo.Controllers
 
             TaskManager taskManager = new TaskManager();
 
-            List<Task> tasks = taskManager.getTasksByPriority(db, priority).Take(3).ToList();
+            List<Task> tasks = taskManager.getAllNotFinishedTasksByPriority(db, priority);
 
             ViewBag.Tasks = taskManager.processTasks(tasks);
 

@@ -165,6 +165,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\common.css" />
     <Content Include="Assets\css\general.css" />
     <Content Include="Assets\css\main.css" />
     <Content Include="Assets\icons\check.png" />
@@ -173,6 +174,7 @@
     <Content Include="Assets\icons\red-triangle.png" />
     <Content Include="Assets\icons\yellow-triangle.png" />
     <Content Include="Assets\isologo\isologo.png" />
+    <Content Include="Assets\js\common.js" />
     <Content Include="Assets\Mockups\Normal Views\All Tasks View.jpg" />
     <Content Include="Assets\Mockups\Normal Views\Create and Edit View.jpg" />
     <Content Include="Assets\Mockups\Normal Views\Main View.jpg" />
@@ -238,12 +240,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Shared\GeneralLayout.cshtml" />
+    <Content Include="Views\AllTasks\Index.cshtml" />
     <Content Include="Task.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Task.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\AllTasks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
