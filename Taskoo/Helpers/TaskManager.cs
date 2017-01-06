@@ -8,9 +8,9 @@ namespace Taskoo.Helpers
     public class TaskManager
     {
         // No test for this method yet.
-        public List<Task> getAllNotFinishedTasksByPriority(TaskDataContext db, char? priority)
+        public List<Task> getAllNotFinishedTasksByPriority(TaskDataContext db, char priority)
         {
-            List<Task> query = getNotFinihedTasks(db, 'g');
+            List<Task> query = null;
 
             switch (priority)
             {
@@ -38,9 +38,9 @@ namespace Taskoo.Helpers
         }
 
         // No test for this method yet.
-        public List<Task> getAllTasksByPriority(TaskDataContext db, char? priority)
+        public List<Task> getAllTasksByPriority(TaskDataContext db, char priority)
         {
-            var query = getAllTasks(db, 'g');
+            List<Task> query = null;
 
             switch (priority)
             {

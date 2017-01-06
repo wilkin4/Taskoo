@@ -22,7 +22,7 @@ namespace Taskoo
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="TaskooDB")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Taskoo")]
 	public partial class TaskDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace Taskoo
     #endregion
 		
 		public TaskDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["TaskooDBConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["TaskooConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

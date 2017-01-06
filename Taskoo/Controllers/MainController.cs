@@ -10,7 +10,7 @@ namespace Taskoo.Controllers
     public class MainController : Controller
     {
         // GET: Main
-        public ActionResult Index(char? priority)
+        public ActionResult Index(char priority = 'g')
         {
             TaskDataContext db = new TaskDataContext();
 

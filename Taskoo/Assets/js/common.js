@@ -2,6 +2,7 @@
 $(document).ready(function () {
 
     managePriorityIcons();
+    initDatePicker();
 
     function managePriorityIcons()
     {
@@ -33,4 +34,12 @@ $(document).ready(function () {
         }
     }
 
+    function initDatePicker()
+    {
+        $(function () {
+            $("#task-date-picker").datepicker();
+        });
+    }
+
 });
+
