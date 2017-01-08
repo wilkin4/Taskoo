@@ -168,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\common.css" />
+    <Content Include="Assets\css\create.css" />
     <Content Include="Assets\css\general.css" />
     <Content Include="Assets\css\main.css" />
     <Content Include="Assets\css\somee.css" />

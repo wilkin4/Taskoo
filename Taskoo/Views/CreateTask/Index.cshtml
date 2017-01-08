@@ -3,16 +3,34 @@
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
 }
 
-<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1" ">
+<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
-            <label>Name</label>
-            <input class="form-control" />
+            <label>Title</label>
+            <input class="form-control task-input-field"/>
+        </div>
+
+        <label>Priority</label>
+        <div id="task-priorities-container">
+            <div class="task-radio-container">
+                <img src="/Assets/icons/green-triangle.png" class="task-radio-img" />
+                <input type="radio" name="task-radio" class="task-radio-button task-input-field" />
+            </div>
+
+            <div class="task-radio-container">
+                <img src="~/Assets/icons/yellow-triangle.png" class="task-radio-img" />
+                <input type="radio" name="task-radio" class="task-radio-button task-input-field" />
+            </div>
+
+            <div class="task-radio-container">
+                <img src="~/Assets/icons/red-triangle.png" class="task-radio-img" />
+                <input type="radio" name="task-radio" class="task-radio-button task-input-field" />
+            </div>
         </div>
 
         <div class="form-group">
             <label>Date and time to finish</label>
-            <input class="form-control" id="task-date-picker" />
+            <input  id="task-date-picker" class="form-control task-input-field"/>
         </div>
     </div>
 
