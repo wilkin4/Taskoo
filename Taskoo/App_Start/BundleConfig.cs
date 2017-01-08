@@ -23,14 +23,22 @@ namespace Taskoo
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/Assets/js").Include(
+                      "~/Assets/js/common.js",
+                      "~/Assets/js/somee.js",
+                      "~/Assets/jQueryUI/jquery-ui.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css"));
 
             // Taskoo style bundles
             bundles.Add(new StyleBundle("~/Assets/css").Include(
                       "~/Assets/css/general.css",
-                      "~/Assets/css/main.css"));
+                      "~/Assets/css/main.css",
+                      "~/Assets/css/create.css",
+                      "~/Assets/css/common.css",
+                      "~/Assets/css/somee.css",
+                      "~/Assets/jQueryUI/jquery-ui.css"));
         }
     }
 }

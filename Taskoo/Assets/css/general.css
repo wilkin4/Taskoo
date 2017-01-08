@@ -1,12 +1,12 @@
 ﻿
-@font-face{
+@font-face
+{
     font-family: "font1";
     src: url(../fonts/raleway/Raleway-Light.ttf);
 }
 
 body
 {
-    padding: 0;
     font-family: "font1";
     color: #aaaaaa;
 }
@@ -32,11 +32,64 @@ body
     background-color: #B2E1F3;
 }
 
+#task-isologo
+{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#task-isologo img
+{
+    height: 30px;
+}
+
+#task-info
+{
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 2px;
+    border: 2px solid #cccccc;
+    color: #cccccc;
+    float: right;
+}
+
+#task-filter
+{
+    clear: both;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#task-filter a
+{
+    text-decoration: none;
+}
+
+.task-transparent-icon
+{
+    opacity: .3;
+}
+
+.task-highlighted-icon
+{
+    opacity: 1;
+}
+
+#task-filter img
+{
+    height: 30px;
+    margin: 0 10px 0 10px;
+}
+
 footer
 {
     clear: both;
     overflow: hidden;
     height: 99px;
+    margin-bottom: -20px;
 }
 
 #task-copyright
@@ -76,26 +129,3 @@ footer
     clear: both;
 }
 
-#task-isologo
-{
-    margin-top: 50px;
-    text-align: center;
-}
-
-#task-isologo img
-{
-    height: 30px;
-}
-
-#task-info
-{
-    font-weight: bold;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    text-align: center;
-    padding-top: 2px;
-    border: 2px solid #cccccc;
-    color: #cccccc;
-    float: right;
-}

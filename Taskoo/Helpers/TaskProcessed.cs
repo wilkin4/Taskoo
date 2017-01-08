@@ -9,8 +9,7 @@ namespace Taskoo.Helpers
     {
         public char Priority { get; set; }
         public string Title { get; set; }
-        public string PriorityIconName { get; set; }
-        public string IsFinishedIconName { get; set; }
+        public bool IsFinishedTask { get; set; }
         public string Time { get; set; }
         public string Date { get; set; }
         public string Description { get; set; }

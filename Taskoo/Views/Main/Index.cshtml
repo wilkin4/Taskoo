@@ -1,22 +1,11 @@
 ﻿
 @{
     Layout = "~/Views/Shared/GeneralLayout.cshtml";
+
+    ViewBag.ViewName = "Main";
 }
 
 <div>
-    <div id="task-filter">
-        <a href="@Url.Action("Index", "Main", new {priority = "g"})">
-            <img src="~/Assets/icons/green-triangle.png" class="@ViewBag.GreenTransparenceIcon task-transparent-icon" />
-        </a>
-        
-        <a href="@Url.Action("Index", "Main", new {priority = "y"})">
-            <img src="~/Assets/icons/yellow-triangle.png" class="@ViewBag.YellowTransparenceIcon task-transparent-icon" />
-        </a>
-
-        <a href="@Url.Action("Index", "Main", new {priority = "r"})">
-            <img src="~/Assets/icons/red-triangle.png" class="@ViewBag.RedTransparenceIcon task-transparent-icon" />
-        </a>
-    </div>
 
     <div id="tasks-container" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
         
@@ -26,7 +15,7 @@
                 <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="task">
                         <div class="task-priority">                                               
-                            <img src="~/Assets/Icons/@(task.PriorityIconName).png" class="img-responsive" />
+                            <img src="~/Assets/icons/@{if (task.Priority == 'g') { @("green-triangle") } else { @(task.Priority == 'y' ? "yellow-triangle" : "red-triangle") } }.png" class="img-responsive" />
                         </div>
 
                         <div class="task-title">
@@ -46,7 +35,7 @@
                         </div>
 
                         <div class="task-controls">
-                            <img class="task-check @task.IsFinishedIconName task-transparent-icon img-responsive" src="~/Assets/icons/check.png" />
+                            <img class="task-check @(task.IsFinishedTask ? "task-highlighted-icon" : "") task-transparent-icon img-responsive" src="~/Assets/icons/check.png" />
                             <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
                         </div>
                     </div>
@@ -66,7 +55,7 @@
         </div>
 
         <div class="task-button-container col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <a href="@Url.Action("Index", "NewTask")">
+            <a href="@Url.Action("Index", "CreateTask")">
                 <div id="task-view-more-button">
                     New
                 </div>

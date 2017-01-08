@@ -29,6 +29,20 @@
             <div id="task-info">
                 i
             </div>
+
+            <div id="task-filter">
+                <a href="@Url.Action("Index", ViewBag.ViewName, new { priority = "g" })">
+                    <img src="~/Assets/icons/green-triangle.png" id="green-triangle" class="task-highlighted-icon task-transparent-icon" />
+                </a>
+
+                <a href="@Url.Action("Index", ViewBag.ViewName, new {priority = "y"})">
+                    <img src="~/Assets/icons/yellow-triangle.png" id="yellow-triangle" class="task-transparent-icon" />
+                </a>
+
+                <a href="@Url.Action("Index", ViewBag.ViewName, new {priority = "r"})">
+                    <img src="~/Assets/icons/red-triangle.png" id="red-triangle" class="task-transparent-icon" />
+                </a>
+            </div>
         </header>
 
         <section>
@@ -52,5 +66,8 @@
                 </div>
             </div>
         </footer>
+
+        @Scripts.Render("~/bundles/jquery");
+        @Scripts.Render("~/Assets/js");
     </body>
 </html>
