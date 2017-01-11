@@ -7,6 +7,7 @@ namespace Taskoo.Helpers
 {
     public class TaskProcessed
     {
+        public int taskId { get; set; }
         public char Priority { get; set; }
         public string Title { get; set; }
         public bool IsFinishedTask { get; set; }

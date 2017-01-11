@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+#tasks-container a
+{
+    text-decoration: none;
+    color: #999999;
+}
+
 
 #task-menu
 {
@@ -21,26 +27,20 @@
     color: #bbbbbb;
 }
 
-#task-view-more-button,
-#task-new-button
+.task-button
 {
     border: 1px solid #bbbbbb;
     height: 50px;
     font-size: 14pt;
     text-align: center;
     padding-top: 10px;
+    color: #999999;
 }
 
-#task-view-more-button:hover
+.task-button:hover
 {
     border: 1px solid #4da9ce;
-     color: #4da9ce;
-}
-
-#task-new-button:hover
-{
-    border: 1px solid #4da9ce;
-     color: #4da9ce;
+    color: #4da9ce;
 }
 
 .task-container
@@ -59,6 +59,11 @@
 {
     margin: auto;
     height: 30px;
+}
+
+.task:hover
+{
+    background-color: #f8f8f8;
 }
 
 .task-title

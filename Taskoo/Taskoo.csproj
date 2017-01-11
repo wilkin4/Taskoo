@@ -168,7 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\common.css" />
-    <Content Include="Assets\css\create.css" />
+    <Content Include="Assets\css\create-edit.css" />
     <Content Include="Assets\css\general.css" />
     <Content Include="Assets\css\main.css" />
     <Content Include="Assets\css\somee.css" />
@@ -273,17 +273,17 @@
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Shared\GeneralLayout.cshtml" />
     <Content Include="Views\AllTasks\Index.cshtml" />
+    <Content Include="Views\CreateTask\Index.cshtml" />
+    <Content Include="Views\EditTask\Index.cshtml" />
     <Content Include="TaskLocal.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>TaskLocal.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\CreateTask\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\EditTask\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

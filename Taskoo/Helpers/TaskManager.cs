@@ -7,6 +7,13 @@ namespace Taskoo.Helpers
 {
     public class TaskManager
     {
+        public List<Task> getTaskById(TaskDataContext db, int taskId)
+        {
+            return (from c in db.Tasks
+                    where c.taskID == taskId
+                    select c).ToList();
+        }
+
         // No test for this method yet.
         public List<Task> getAllNotFinishedTasksByPriority(TaskDataContext db, char priority)
         {
@@ -79,6 +86,7 @@ namespace Taskoo.Helpers
             {
                 TaskProcessed taskProcessed = new TaskProcessed();
 
+                taskProcessed.taskId = task.taskID;
                 taskProcessed.Priority = (char)task.priority;
                 taskProcessed.IsFinishedTask = (bool) task.isDone;
                 taskProcessed.Title = task.title;
@@ -90,6 +98,21 @@ namespace Taskoo.Helpers
             }
 
             return tasksProcessedList;
+        }
+
+        // No test for this method yet.
+        public TaskProcessed processTask(Task task)
+        {
+            TaskProcessed taskProcessed = new TaskProcessed();
+
+            taskProcessed.Priority = (char)task.priority;
+            taskProcessed.IsFinishedTask = (bool)task.isDone;
+            taskProcessed.Title = task.title;
+            taskProcessed.Date = String.Format("{0:dddd, MMMM d}", task.finalDate);
+            taskProcessed.Time = String.Format("{0:T}", task.finalDate);
+            taskProcessed.Description = task.description;
+
+            return taskProcessed;
         }
     }
 }

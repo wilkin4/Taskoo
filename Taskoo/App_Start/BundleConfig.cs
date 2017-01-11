@@ -34,9 +34,9 @@ namespace Taskoo
             // Taskoo style bundles
             bundles.Add(new StyleBundle("~/Assets/css").Include(
                       "~/Assets/css/general.css",
-                      "~/Assets/css/main.css",
-                      "~/Assets/css/create.css",
                       "~/Assets/css/common.css",
+                      "~/Assets/css/main.css",
+                      "~/Assets/css/create-edit.css",
                       "~/Assets/css/somee.css",
                       "~/Assets/jQueryUI/jquery-ui.css"));
         }

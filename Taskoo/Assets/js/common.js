@@ -10,7 +10,15 @@ $(document).ready(function () {
     {
         var pathname = window.location.pathname;
         var arr = pathname.split('/');
+
+        if (arr[1] == "CreateTask" || arr[1] == "EditTask")
+        {
+            $('#task-filter').remove();
+        }
+
         var priority = arr[arr.length - 1];
+
+        
 
         if(priority == 'a')
         {
@@ -39,7 +47,9 @@ $(document).ready(function () {
     function initDatePicker()
     {
         $(function () {
-            $('#task-date-picker').datepicker();
+            $('#task-date-picker').datepicker({
+                dateFormat: "dd-mm-yy"
+            });
         });
     }
 

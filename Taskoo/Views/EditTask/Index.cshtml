@@ -7,7 +7,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div id="task-title-field" class="form-group">
             <label>Title</label>
-            <input class="form-control task-input-field"/>
+            <input class="form-control task-input-field" value="@ViewBag.task.Title"/>
         </div>
 
         <label>Priority</label>
@@ -68,7 +68,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="form-group">
             <label>Description</label>
-            <textarea id="task-description-field" class="form-control task-input-field"></textarea>
+            <textarea id="task-description-field" class="form-control task-input-field">@ViewBag.task.Description</textarea>
         </div>
 
         <div class="task-button-container task-button-container-create-edit col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -89,7 +89,7 @@
 
         <div id="task-icons-container-create-edit" class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             <div class="task-icons-create-edit col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <img class="task-transparent-icon" src="~/Assets/icons/check.png"/>
+                <img class="@(ViewBag.task.IsFinishedTask ? "task-highlighted-icon" : "") task-transparent-icon" src="~/Assets/icons/check.png" />
             </div>
 
             <div class="task-icons-create-edit col-lg-6 col-md-6 col-sm-6 col-xs-6">
