@@ -13,32 +13,34 @@
             foreach (var task in ViewBag.Tasks)
             {
                 <div class="task-container col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="task">
-                        <div class="task-priority">                                               
-                            <img src="~/Assets/icons/@{if (task.Priority == 'g') { @("green-triangle") } else { @(task.Priority == 'y' ? "yellow-triangle" : "red-triangle") } }.png" class="img-responsive" />
-                        </div>
+                    <a href="@Url.Action("Index", "EditTask", new { taskId = task.taskId})">
+                        <div class="task">
+                            <div class="task-priority">
+                                <img src="~/Assets/icons/@{if (task.Priority == 'g') { @("green-triangle") } else { @(task.Priority == 'y' ? "yellow-triangle" : "red-triangle") } }.png" class="img-responsive" />
+                            </div>
 
-                        <div class="task-title">
-                            @task.Title
-                        </div>
+                            <div class="task-title">
+                                @task.Title
+                            </div>
 
-                        <div class="task-date-time">  
-                            @task.Time
-                            <br />
-                            @task.Date
-                        </div>
+                            <div class="task-date-time">
+                                @task.Time
+                                <br />
+                                @task.Date
+                            </div>
 
-                        <div class="task-description">                            
-                            <span>
-                                @task.Description
-                            </span>
-                        </div>
+                            <div class="task-description">
+                                <span>
+                                    @task.Description
+                                </span>
+                            </div>
 
-                        <div class="task-controls">
-                            <img class="task-check @(task.IsFinishedTask ? "task-highlighted-icon" : "") task-transparent-icon img-responsive" src="~/Assets/icons/check.png" />
-                            <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
+                            <div class="task-controls">
+                                <img class="task-check @(task.IsFinishedTask ? "task-highlighted-icon" : "") task-transparent-icon img-responsive" src="~/Assets/icons/check.png" />
+                                <img class="task-close img-responsive" src="~/Assets/icons/close.png" />
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             }
         }
@@ -48,7 +50,7 @@
     <nav id="task-menu" class="col-lg-4 col-md-4 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-2">
         <div class="task-button-container col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <a href="@Url.Action("Index", "AllTasks", new { priority = "a"})">
-                <div id="task-view-more-button">
+                <div class="task-button">
                     View more
                 </div>
             </a>
@@ -56,7 +58,7 @@
 
         <div class="task-button-container col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <a href="@Url.Action("Index", "CreateTask")">
-                <div id="task-view-more-button">
+                <div class="task-button">
                     New
                 </div>
             </a>

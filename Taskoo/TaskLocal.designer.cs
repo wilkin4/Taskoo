@@ -30,6 +30,9 @@ namespace Taskoo
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTask(Task instance);
+    partial void UpdateTask(Task instance);
+    partial void DeleteTask(Task instance);
     #endregion
 		
 		public TaskDataContext() : 
@@ -72,8 +75,12 @@ namespace Taskoo
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Task")]
-	public partial class Task
+	public partial class Task : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _taskID;
 		
 		private System.Nullable<char> _priority;
 		
@@ -87,8 +94,49 @@ namespace Taskoo
 		
 		private System.Nullable<bool> _isAvailable;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OntaskIDChanging(int value);
+    partial void OntaskIDChanged();
+    partial void OnpriorityChanging(System.Nullable<char> value);
+    partial void OnpriorityChanged();
+    partial void OntitleChanging(string value);
+    partial void OntitleChanged();
+    partial void OnfinalDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnfinalDateChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnisDoneChanging(System.Nullable<bool> value);
+    partial void OnisDoneChanged();
+    partial void OnisAvailableChanging(System.Nullable<bool> value);
+    partial void OnisAvailableChanged();
+    #endregion
+		
 		public Task()
 		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_taskID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int taskID
+		{
+			get
+			{
+				return this._taskID;
+			}
+			set
+			{
+				if ((this._taskID != value))
+				{
+					this.OntaskIDChanging(value);
+					this.SendPropertyChanging();
+					this._taskID = value;
+					this.SendPropertyChanged("taskID");
+					this.OntaskIDChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_priority", DbType="Char(1)")]
@@ -102,7 +150,11 @@ namespace Taskoo
 			{
 				if ((this._priority != value))
 				{
+					this.OnpriorityChanging(value);
+					this.SendPropertyChanging();
 					this._priority = value;
+					this.SendPropertyChanged("priority");
+					this.OnpriorityChanged();
 				}
 			}
 		}
@@ -118,7 +170,11 @@ namespace Taskoo
 			{
 				if ((this._title != value))
 				{
+					this.OntitleChanging(value);
+					this.SendPropertyChanging();
 					this._title = value;
+					this.SendPropertyChanged("title");
+					this.OntitleChanged();
 				}
 			}
 		}
@@ -134,7 +190,11 @@ namespace Taskoo
 			{
 				if ((this._finalDate != value))
 				{
+					this.OnfinalDateChanging(value);
+					this.SendPropertyChanging();
 					this._finalDate = value;
+					this.SendPropertyChanged("finalDate");
+					this.OnfinalDateChanged();
 				}
 			}
 		}
@@ -150,7 +210,11 @@ namespace Taskoo
 			{
 				if ((this._description != value))
 				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
 					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
 				}
 			}
 		}
@@ -166,7 +230,11 @@ namespace Taskoo
 			{
 				if ((this._isDone != value))
 				{
+					this.OnisDoneChanging(value);
+					this.SendPropertyChanging();
 					this._isDone = value;
+					this.SendPropertyChanged("isDone");
+					this.OnisDoneChanged();
 				}
 			}
 		}
@@ -182,8 +250,32 @@ namespace Taskoo
 			{
 				if ((this._isAvailable != value))
 				{
+					this.OnisAvailableChanging(value);
+					this.SendPropertyChanging();
 					this._isAvailable = value;
+					this.SendPropertyChanged("isAvailable");
+					this.OnisAvailableChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
