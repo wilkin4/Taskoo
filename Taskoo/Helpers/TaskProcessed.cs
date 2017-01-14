@@ -11,8 +11,11 @@ namespace Taskoo.Helpers
         public char Priority { get; set; }
         public string Title { get; set; }
         public bool IsFinishedTask { get; set; }
-        public string Time { get; set; }
+        public DateTime DateTime { get; set; }
         public string Date { get; set; }
+        public string Time { get; set; }
+        public int Hour { get; set; }
+        public int Minute { get; set; }
         public string Description { get; set; }
         public bool IsDone { get; set; }
         public bool IsAvailable { get; set; }

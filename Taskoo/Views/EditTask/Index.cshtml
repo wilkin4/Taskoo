@@ -13,25 +13,25 @@
         <label>Priority</label>
         <div id="task-priorities-container">
             <div class="task-radio-container">
-                <img src="/Assets/icons/green-triangle.png" class="task-radio-img" />
-                <input type="radio" name="task-radio" class="task-radio-button task-input-field" />
+                <img src="~/Assets/icons/green-triangle.png" class="@(ViewBag.task.Priority == 'g' ? "task-highlighted-icon" : "task-transparent-icon") task-radio-img" />
+                <input type="radio" name="task-radio" class="task-radio-button task-input-field" @(ViewBag.task.Priority == 'g' ? "checked" : "") />
             </div>
 
             <div class="task-radio-container">
-                <img src="~/Assets/icons/yellow-triangle.png" class="task-radio-img" />
-                <input type="radio" name="task-radio" class="task-radio-button task-input-field" />
+                <img src="~/Assets/icons/yellow-triangle.png" class="@(ViewBag.task.Priority == 'y' ? "task-highlighted-icon" : "task-transparent-icon") task-radio-img" />
+                <input type="radio" name="task-radio" class="task-radio-button task-input-field" @(ViewBag.task.Priority == 'y' ? "checked" : "")/>
             </div>
 
             <div class="task-radio-container">
-                <img src="~/Assets/icons/red-triangle.png" class="task-radio-img" />
-                <input type="radio" name="task-radio" class="task-radio-button task-input-field" />
+                <img src="~/Assets/icons/red-triangle.png" class="@(ViewBag.task.Priority == 'r' ? "task-highlighted-icon" : "task-transparent-icon") task-radio-img" />
+                <input type="radio" name="task-radio" class="task-radio-button task-input-field" @(ViewBag.task.Priority == 'r' ? "checked" : "") />
             </div>
         </div>
 
         <div id="task-datetime">
             <div class="form-group">
                 <label>Date and time to finish</label>
-                <input id="task-date-picker" class="form-control task-input-field" />
+                <input id="task-date-picker" class="form-control task-input-field" value="@(ViewBag.task.DateTime.ToString(@"dd-MM-yyyy"))"/>
             </div>
 
             <div id="task-hours" class="task-time form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -39,7 +39,7 @@
                     @{
                         for (int i = 1; i <= 12; i++)
                         {
-                            <option>@(i < 10 ? "0" + i.ToString() : i.ToString())</option>
+                            <option @(ViewBag.task.Hour == i ? "selected=\"selected\"" : "")>@(i < 10 ? "0" + i.ToString() : i.ToString())</option>
                         }
                     }
                 </select>
@@ -48,9 +48,9 @@
             <div id="task-minutes" class="task-time form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <select class="form-control task-input-field">
                     @{
-                        for (int i = 1; i <= 60; i++)
+                        for (int i = 0; i <= 60; i++)
                         {
-                            <option>@(i < 10 ? "0" + i.ToString() : i.ToString())</option>
+                            <option @(ViewBag.task.Minute == i ? "selected=\"selected\"" : "")>@(i < 10 ? "0" + i.ToString() : i.ToString())</option>
                         }
                     }
                 </select>
@@ -58,8 +58,8 @@
 
             <div id="task-time-meridian" class="task-time form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <select class="form-control task-input-field">
-                    <option>AM</option>
-                    <option>PM</option>
+                    <option @(ViewBag.task.DateTime.ToString("tt") == "AM" ? "selected=\"selected\"" : "")>AM</option>
+                    <option @(ViewBag.task.DateTime.ToString("tt") == "PM" ? "selected=\"selected\"" : "")>PM</option>
                 </select>
             </div>
         </div>

@@ -173,6 +173,7 @@
     <Content Include="Assets\css\main.css" />
     <Content Include="Assets\css\somee.css" />
     <Content Include="Assets\icons\check.png" />
+    <Content Include="Assets\icons\circle.png" />
     <Content Include="Assets\icons\close.png" />
     <Content Include="Assets\icons\green-triangle.png" />
     <Content Include="Assets\icons\red-triangle.png" />

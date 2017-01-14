@@ -105,11 +105,12 @@ namespace Taskoo.Helpers
         {
             TaskProcessed taskProcessed = new TaskProcessed();
 
-            taskProcessed.Priority = (char)task.priority;
-            taskProcessed.IsFinishedTask = (bool)task.isDone;
+            taskProcessed.Priority = (char) task.priority;
+            taskProcessed.IsFinishedTask = (bool) task.isDone;
             taskProcessed.Title = task.title;
-            taskProcessed.Date = String.Format("{0:dddd, MMMM d}", task.finalDate);
-            taskProcessed.Time = String.Format("{0:T}", task.finalDate);
+            taskProcessed.DateTime = (DateTime) task.finalDate;
+            taskProcessed.Hour = int.Parse(taskProcessed.DateTime.ToString("hh:mm").Split(':')[0]);
+            taskProcessed.Minute = int.Parse(taskProcessed.DateTime.ToString("hh:mm").Split(':')[1]);
             taskProcessed.Description = task.description;
 
             return taskProcessed;

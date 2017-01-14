@@ -1,4 +1,10 @@
 ﻿
+$(window).load(function () {
+    $('#task-loading-animation-container').fadeOut(300);
+    $('#task-corner-design-bottom-container').css('position', 'initial');
+    $('body').css('overflow', 'initial');
+});
+
 $(document).ready(function () {
 
     managePriorityIcons();
@@ -17,8 +23,6 @@ $(document).ready(function () {
         }
 
         var priority = arr[arr.length - 1];
-
-        
 
         if(priority == 'a')
         {
