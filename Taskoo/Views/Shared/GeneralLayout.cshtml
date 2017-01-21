@@ -12,6 +12,16 @@
 
     <body>
         <div id="task-loading-animation-container">
+            <div id="task-loading-corner-design-top-container" class="task-corner-design-top-container">
+                <div class="task-corner-design-top">
+
+                </div>
+
+                <div class="task-corner-design-top">
+
+                </div>
+            </div>
+
             <div id="task-loading-circle">
                 <img src="~/Assets/icons/circle.png" class="img-responsive"/>
             </div>
@@ -19,9 +29,19 @@
              <div id="task-isologo-loading-container">
                  <img src="~/Assets/isologo/isologo.png" class="img-responsive"/>
              </div>
+
+            <div id="task-loading-corner-design-bottom-container" class="task-corner-design-bottom-container">
+                <div class="task-corner-design-bottom">
+
+                </div>
+
+                <div class="task-corner-design-bottom">
+
+                </div>
+            </div>
         </div>
 
-        <div id="task-corner-design-top-container">
+        <div class="task-corner-design-top-container">
             <div class="task-corner-design-top">
 
             </div>
@@ -41,15 +61,15 @@
             </div>
 
             <div id="task-filter">
-                <a href="@Url.Action("Index", ViewBag.ViewName, new { priority = "g" })">
+                <a href="@Url.Action("Index", ViewBag.ViewName, new { priority = "g" })" class="task-clickable">
                     <img src="~/Assets/icons/green-triangle.png" id="green-triangle" class="task-highlighted-icon task-transparent-icon" />
                 </a>
 
-                <a href="@Url.Action("Index", ViewBag.ViewName, new {priority = "y"})">
+                <a href="@Url.Action("Index", ViewBag.ViewName, new {priority = "y"})" class="task-clickable">
                     <img src="~/Assets/icons/yellow-triangle.png" id="yellow-triangle" class="task-transparent-icon" />
                 </a>
 
-                <a href="@Url.Action("Index", ViewBag.ViewName, new {priority = "r"})">
+                <a href="@Url.Action("Index", ViewBag.ViewName, new {priority = "r"})" class="task-clickable">
                     <img src="~/Assets/icons/red-triangle.png" id="red-triangle" class="task-transparent-icon" />
                 </a>
             </div>
@@ -66,7 +86,7 @@
                 </span>
             </div>
 
-            <div id="task-corner-design-bottom-container">
+            <div class="task-corner-design-bottom-container">
                 <div class="task-corner-design-bottom">
 
                 </div>

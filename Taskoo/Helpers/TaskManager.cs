@@ -17,22 +17,22 @@ namespace Taskoo.Helpers
         // No test for this method yet.
         public List<Task> getAllNotFinishedTasksByPriority(TaskDataContext db, char priority)
         {
-            List<Task> query = null;
+            List<Task> tasks = null;
 
             switch (priority)
             {
                 case 'g':
-                    query = getNotFinihedTasks(db, 'g');
+                    tasks = getNotFinihedTasks(db, 'g');
                     break;
                 case 'y':
-                    query = getNotFinihedTasks(db, 'y');
+                    tasks = getNotFinihedTasks(db, 'y');
                     break;
                 case 'r':
-                    query = getNotFinihedTasks(db, 'r');
+                    tasks = getNotFinihedTasks(db, 'r');
                     break;
             }
 
-            return query;
+            return tasks;
         }
 
         // No test for this method yet.
@@ -47,26 +47,27 @@ namespace Taskoo.Helpers
         // No test for this method yet.
         public List<Task> getAllTasksByPriority(TaskDataContext db, char priority)
         {
-            List<Task> query = null;
+            List<Task> tasks = null;
 
             switch (priority)
             {
                 case 'g':
-                    query = getAllTasks(db, 'g');
+                    tasks = getAllTasks(db, 'g');
                     break;
                 case 'y':
-                    query = getAllTasks(db, 'y');
+                    tasks = getAllTasks(db, 'y');
                     break;
                 case 'r':
-                    query = getAllTasks(db, 'r');
+                    tasks = getAllTasks(db, 'r');
                     break;
                 case 'a':
-                    query = (from c in db.Tasks
+                    tasks = (from c in db.Tasks
+                             orderby c.finalDate ascending
                              select c).ToList();
                     break;
             }
 
-            return query;
+            return tasks;
         }
 
         // No test for this method yet.
@@ -74,6 +75,7 @@ namespace Taskoo.Helpers
         {
             return (from c in db.Tasks
                     where c.priority == priority
+                    orderby c.finalDate ascending
                     select c).ToList();
         }
 
