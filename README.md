@@ -1,3 +1,3 @@
 # Taskoo
 
-# This is a to do list application.
+## This is a to do list application.
